@@ -1,12 +1,12 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-struct inteiro {
+typedef struct Inteiro {
 	int valor;
 	struct inteiro * prox;
-};
+} Inteiro;
 
-void exibe (struct inteiro * i) {
+void exibe (Inteiro * i) {
 	while (i != NULL) {
 		printf("%d ", i->valor);
 		i = i->prox;
@@ -14,15 +14,24 @@ void exibe (struct inteiro * i) {
 }
 
 int main () {
-	struct inteiro i4 = {4, NULL};
-	struct inteiro i3 = {3, &i4};
-	struct inteiro i2 = {2, &i3};
-	struct inteiro i1 = {1, &i2};
+	Inteiro* i1 = malloc(sizeof(Inteiro));
+	Inteiro* i2 = malloc(sizeof(Inteiro));
+	Inteiro* i3 = malloc(sizeof(Inteiro));
+	Inteiro* i4 = malloc(sizeof(Inteiro));
 	
-	struct inteiro lista;
-	lista.prox = &i1;
+	i4->prox = NULL;
+	i4->valor = 4;
+	i3->prox = i4;
+	i3->valor = 3;
+	i2->prox = i3;
+	i2->valor = 2;
+	i1->prox = i2;
+	i1->valor = 1;
 	
-	exibe(lista.prox);
+	Inteiro* lista = malloc(sizeof(Inteiro));
+	lista->prox = i1;
+	
+	exibe(lista->prox);
 
 	return 0;
 }
