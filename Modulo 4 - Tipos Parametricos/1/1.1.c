@@ -29,7 +29,7 @@ int main () {
 	
 	printf("Guerreiro - Altura: %f - Idade: %d - Forca: %d", p1.status.altura, p1.status.idade, p1.forca);
 	printf("\n");
-	printf("Mago - Altura: %f - Idade: %d - Magia: %d", p2.status.altura, p2.status.idade, p2.magia);
+	printf("Mago - Altura: %f - Idade: %d - Magia: %f", p2.status.altura, p2.status.idade, p2.magia);
 	
 	return 0;
 }
