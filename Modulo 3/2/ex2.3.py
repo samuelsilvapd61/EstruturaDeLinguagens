@@ -1,6 +1,6 @@
 def fmap(f, lista):
     for i in range(0, len(lista)):
-        lista.insert(i, f(lista.pop(i)))
+        lista[i] = f(lista.__getitem__(i))
 
 
 funcao = lambda x: x*3
