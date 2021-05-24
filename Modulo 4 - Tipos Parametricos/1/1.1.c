@@ -1,10 +1,16 @@
 #include<stdio.h>
 
+// Cada personagem tem Altura e Idade
 typedef struct Base {
 	float altura;
 	int idade;
 } Base;
 
+
+// O personagem e:
+// Um Guerreiro que tem forca
+// Um Mago que tem magia
+// Um Sacerdote que tem reza
 enum CLASSE {Guerreiro, Mago, Sacerdote};
 
 typedef struct Personagem {
@@ -13,15 +19,17 @@ typedef struct Personagem {
 	union {
 		struct { int forca; }; // Guerreiro
 		struct { float magia; }; // Mago
-		struct { int resistencia; }; // Sacerdote
+		struct { int reza; }; // Sacerdote
 	};
 } Personagem;
 
-void main () {
-	Personagem p = { Guerreiro, {1.8, 23}, 5};
+int main () {
+	Personagem p1 = { Guerreiro, {1.8, 23}, 50};
+	Personagem p2 = { Mago, {1.6, 46}, 80};
 	
-	printf("Guerreiro - : %f - Idade: %d - Forca: %d", p.status.altura, p.status.idade, p.forca);
+	printf("Guerreiro - Altura: %f - Idade: %d - Forca: %d", p1.status.altura, p1.status.idade, p1.forca);
 	printf("\n");
+	printf("Mago - Altura: %f - Idade: %d - Magia: %d", p2.status.altura, p2.status.idade, p2.magia);
 	
 	return 0;
 }

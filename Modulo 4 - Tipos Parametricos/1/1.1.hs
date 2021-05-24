@@ -4,10 +4,13 @@ data Base = Base Double Int
 -- O personagem e:
 -- Um Guerreiro que tem forca
 -- Um Mago que tem magia
--- Um Sacerdote que tem resistencia
+-- Um Sacerdote que tem reza
 data Personagem = Guerreiro Base Int | Mago Base Double | Sacerdote Base Int
 
 p1 :: Personagem
-p1 = Guerreiro (Base 1.8 23) 5
+p1 = Guerreiro (Base 1.8 23) 50
+
+p2 :: Personagem
+p2 = Mago (Base 1.6 46) 80
 
 main = print("OK")
