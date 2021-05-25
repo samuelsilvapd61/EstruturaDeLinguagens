@@ -24,8 +24,8 @@ typedef struct Personagem {
 } Personagem;
 
 int main () {
-	Personagem p1 = { Guerreiro, {1.8, 23}, 50};
-	Personagem p2 = { Mago, {1.6, 46}, 80};
+	Personagem p1 = { Guerreiro, {1.8, 23}, {.forca=50}};
+	Personagem p2 = { Mago, {1.6, 46}, {.magia=80}};
 	
 	printf("Guerreiro - Altura: %f - Idade: %d - Forca: %d", p1.status.altura, p1.status.idade, p1.forca);
 	printf("\n");
