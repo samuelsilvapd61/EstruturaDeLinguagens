@@ -1,4 +1,5 @@
 data Lista a = No a (Lista a) | Vazio
+    deriving Show
 
 l = No 10 (No 20 (No 30 Vazio) )
 
@@ -14,4 +15,4 @@ filterP f l =
 
 l2 = filterP(\x -> x>15) l
 
-main = putStrLn "ok"
+main = print(l2)
